@@ -49,11 +49,10 @@
                         <td>{{ $customer->address }}</td>
 
                         <td>
-                            <a href="{{ route('customers.edit', $customer->id) }}">
+                            <a href="{{ route('customers.edit', $customer->id) }}" class="edit-link">
                                 Edit
                             </a>
-                        </td>
-                        <td>
+
                             <form method="POST" action="{{ route('customers.destroy', $customer->id) }}"
                                 style="display: inline;"
                                 onsubmit="return confirm('Are you sure you want to delete this customer?');">

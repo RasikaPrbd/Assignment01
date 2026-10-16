@@ -51,11 +51,10 @@
                         <td>{{ $product->description }}</td>
 
                         <td>
-                            <a href="{{ route('products.edit', $product->id) }}">
+                            <a href="{{ route('products.edit', $product->id) }}" class="edit-link">
                                 Edit
                             </a>
-                        </td>
-                        <td>
+
                             <form method="POST" action="{{ route('products.destroy', $product->id) }}"
                                 style="display: inline;"
                                 onsubmit="return confirm('Are you sure you want to delete this product?');">

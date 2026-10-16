@@ -9,8 +9,14 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Middleware\RoleMiddleware;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
+
+Route::fallback(function () {
+    return redirect('login');
+});
+
+
 
 Route::middleware(['auth', RoleMiddleware::class])->group(function () {
 

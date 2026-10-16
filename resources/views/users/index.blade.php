@@ -47,11 +47,10 @@
                         <td>{{ $user->created_at?->format('Y-m-d') }}</td>
 
                         <td>
-                            <a href="{{ route('users.edit', $user->id) }}">
+                            <a href="{{ route('users.edit', $user->id) }}" class="edit-link">
                                 Edit
                             </a>
-                        </td>
-                        <td>
+
                             <form method="POST" action="{{ route('users.destroy', $user->id) }}" style="display: inline;"
                                 onsubmit="return confirm('Are you sure you want to delete this user?');">
                                 @csrf
